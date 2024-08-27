@@ -8,25 +8,21 @@ namespace SY22_PRRPRR02_02_Repetition_2 {
 	internal class Program {
 		static void Main(string[] args) {
 
-			string[] namn = new string[] { 
-				"Axel",
-				"Emil",
-				"Jessica",
-				"Viktor",
-				"Martin",
-				"Amanda"
-			};
+			List<int> listOfInts = new List<int>();
 
-			for (int i = 0; i < 6; i++) {
-				Console.WriteLine(namn[i]);
+			Console.WriteLine(listOfInts.Count);
+
+			listOfInts.Add(3);
+			listOfInts.Add(5);
+			listOfInts.Add(6);
+
+			Console.WriteLine(listOfInts.Count);
+
+			Console.WriteLine("------");
+
+			for (int i = 0; i < listOfInts.Count; i++) {
+				Console.WriteLine(listOfInts[i]);
 			}
-
-			namn[3] = "Sven";
-
-			for (int i = 0; i < 6; i++) {
-				Console.WriteLine(namn[i]);
-			}
-
 
 		}
 	}
