@@ -9,8 +9,11 @@ namespace SY22_PRRPRR02_02_Repetition_2 {
 		static void Main(string[] args) {
 
 			
-			for (int i = 0; i < 10; i++) {
-				Console.WriteLine("Tjena #" + i);
+			for (int i = 10; i > 0; i--) {
+				for (int j = 0; j < i; j++) {
+					Console.Write('*');
+				}
+				Console.WriteLine();
 			}
 		}
 	}
