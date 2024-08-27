@@ -8,20 +8,43 @@ namespace SY22_PRRPRR02_02_Repetition_2 {
 	internal class Program {
 		static void Main(string[] args) {
 
-			List<int> listOfInts = new List<int>();
+			List<int> uniqueNumbers = new List<int>();
 
-			Console.WriteLine(listOfInts.Count);
+			bool run = true;
 
-			listOfInts.Add(3);
-			listOfInts.Add(5);
-			listOfInts.Add(6);
+			while (run) {
+				Console.Clear();
 
-			Console.WriteLine(listOfInts.Count);
+				Console.WriteLine("Vänligen mata in ett heltal");
 
-			Console.WriteLine("------");
+				string input = Console.ReadLine();
+				int number = int.Parse(input);
 
-			for (int i = 0; i < listOfInts.Count; i++) {
-				Console.WriteLine(listOfInts[i]);
+				int matchIndex = -1;
+
+				for (int i = 0; i < uniqueNumbers.Count; i++) {
+					if (number == uniqueNumbers[i]) {
+						matchIndex = i;
+					}
+				}
+
+				if (matchIndex != -1) {
+					for (int i = 0; i < matchIndex; i++) {
+						uniqueNumbers.RemoveAt(0);
+					}
+					for (int i = 0; i < uniqueNumbers.Count; i++) {
+						Console.WriteLine(i);
+					}
+				} else {
+					uniqueNumbers.Add(number);
+				}
+
+				Console.WriteLine("Vill du fortsätta?");
+				string response = Console.ReadLine();
+				if (response == "nej") {
+					run = false;
+				}
+
 			}
 
 		}
