@@ -8,27 +8,10 @@ namespace SY22_PRRPRR02_02_Repetition_2 {
 	internal class Program {
 		static void Main(string[] args) {
 
-			Console.WriteLine("Hur gammal är din hund?");
-
-			string response = Console.ReadLine();
-
-			// int dogAge = int.Parse(response);
-
-			int dogAge;
-
-			while (!int.TryParse(response, out dogAge)) {
-				Console.WriteLine("Ett tal, tack.");
-				response = Console.ReadLine();
+			
+			for (int i = 0; i < 10; i++) {
+				Console.WriteLine("Tjena #" + i);
 			}
-
-			if (dogAge > 13) {
-				Console.WriteLine("Din hund är nog död.");
-			} else if (dogAge > 8) {
-				Console.WriteLine("Om fem år är din hund nog död.");
-			} else {
-				Console.WriteLine("Om fem år är din hund " + (dogAge + 5));
-			}
-
 		}
 	}
 }
