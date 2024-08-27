@@ -8,11 +8,15 @@ namespace SY22_PRRPRR02_02_Repetition_2 {
 	internal class Program {
 		static void Main(string[] args) {
 
-			int i = 0;
+			bool isRunning = true;
 
-			while (i < 10) {
-				Console.WriteLine("Tjena #" + i);
-				//i++;
+			while (isRunning) {
+				Console.WriteLine("Vill du fortsätta köra?");
+				string reply = Console.ReadLine().ToLower();
+				if (reply == "nej" || reply == "no") {
+					isRunning = false;
+				}
+
 			}
 		}
 	}
