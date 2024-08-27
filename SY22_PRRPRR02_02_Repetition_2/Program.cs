@@ -20,24 +20,15 @@ namespace SY22_PRRPRR02_02_Repetition_2 {
 				string input = Console.ReadLine();
 				int number = int.Parse(input);
 
-				int matchIndex = -1;
 
-				for (int i = 0; i < uniqueNumbers.Count; i++) {
-					if (number == uniqueNumbers[i]) {
-						matchIndex = i;
-					}
-				}
+				if (uniqueNumbers.Contains(number)) {
+					int index = uniqueNumbers.IndexOf(number);
 
-				if (matchIndex != -1) {
-					for (int i = 0; i < matchIndex; i++) {
-						uniqueNumbers.RemoveAt(0);
-					}
-					for (int i = 0; i < uniqueNumbers.Count; i++) {
-						Console.WriteLine(i);
-					}
+					uniqueNumbers.RemoveRange(0, index);
 				} else {
 					uniqueNumbers.Add(number);
 				}
+
 
 				Console.WriteLine("Vill du fortsätta?");
 				string response = Console.ReadLine();
